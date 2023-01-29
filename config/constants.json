@@ -1,0 +1,16 @@
+{
+    "host": "localhost",
+    "port": "4000",
+    "jwt_expiretime": "36000",
+    "channelName": "mychannel",
+    "CC_SRC_PATH": "../../fabric-samples/test-network/channel-artifacts",
+    "eventWaitTime": "30000",
+    "admins": [
+        {
+            "username": "admin",
+            "secret": "adminpw"
+        }
+    ],
+    "MONGO_URI": "mongodb://localhost:27015/",
+    "TOKEN_KEY": "ThisTokenIsKey"
+}

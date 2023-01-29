@@ -1,0 +1,14 @@
+version: "2.1"
+
+networks:
+  test:
+    name: fabric_test
+
+services:
+  api:
+    image: api:1.0
+    build: .
+    networks:
+      - test
+    ports:
+      - 4000:4000
