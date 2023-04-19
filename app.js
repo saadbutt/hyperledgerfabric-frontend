@@ -379,7 +379,11 @@ app.get('/channels/:channelName/chaincodes/:chaincodeName', async function (req,
         // console.log('args======a====', args);
 
         let message = await query.query(channelName, chaincodeName, args, fcn, req.username, "org1");
-
+        message = message.map(item => {
+                item.Record.tokenId = parseInt(item.Record.tokenId);
+               return item;
+       }).sort((a,b) => b.Record.tokenId - a.Record.tokenId);
+ 
         const response_payload = {
             result: message,
             error: null,
